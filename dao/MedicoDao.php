@@ -16,6 +16,7 @@ class MedicoDAO {
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    
 
     public function registrar($data) {
         $pdo = Conexion::conectar();
@@ -55,4 +56,7 @@ class MedicoDAO {
         $stmt = $pdo->prepare($sql);
         return $stmt->execute([$id]);
     }
+
+    
 }
+

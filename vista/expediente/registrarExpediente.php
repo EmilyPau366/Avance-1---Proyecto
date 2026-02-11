@@ -13,7 +13,7 @@ include __DIR__ . '/../layout/header.php';
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label class="form-label fw-bold">Médico Tratante</label>
-                        <select name="idMedicos" class="form-select" required>
+                        <select id="medico"  name="idMedicos" class="form-select" required>
                             <option value="">Seleccione un médico...</option>
                             <?php if (!empty($medicos)): ?>
                                 <?php foreach ($medicos as $m): ?>
@@ -23,6 +23,11 @@ include __DIR__ . '/../layout/header.php';
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </select>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Especialidad</label>
+                            <input type="text" id="especialidad" class="form-control" readonly>
+                        </div>
                     </div>
 
                     <div class="col-md-6 mb-3">

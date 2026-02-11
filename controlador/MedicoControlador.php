@@ -39,4 +39,20 @@ class MedicoControlador {
         header("Location: index.php?accion=listarMedico");
         exit;
     }
+
+    public function obtenerEspecialidad(){
+    header('Content-Type: application/json');
+
+    $id = $_GET['id'] ?? null;
+
+    if(!$id){
+        echo json_encode(null);
+        return;
+    }
+
+    // YA tienes $this->dao creado en el constructor
+    $medico = $this->dao->obtenerPorId($id);
+
+    echo json_encode($medico);
+}
 }

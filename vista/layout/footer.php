@@ -4,7 +4,7 @@
 
     </div>
 </footer>
-<script> </script>
+<script src="assets/js/expediente.js"></script>
 
 </body>
 </html>

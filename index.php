@@ -79,6 +79,10 @@ switch ($accion) {
         $medicoCtrl->eliminar($_GET['id']);
         break;
 
+    case 'obtenerEspecialidad':
+        (new MedicoControlador())->obtenerEspecialidad();
+        break;
+
     //Expediente
     case 'listarExpedientes':
         $expedienteCtrl->listar();
