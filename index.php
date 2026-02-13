@@ -9,6 +9,12 @@ require_once __DIR__ . '/controlador/ExpedienteControlador.php';
 
 
 $accion = $_GET['accion'] ?? 'inicio';
+if(!isset($_SESSION['usuario'])
+    && $accion != 'login'
+    && $accion != 'procesarLogin'){
+        header("Location: index.php?accion=login");
+        exit();
+    }
 $usuarioCtrl = new UsuarioControlador();
 $medicoCtrl = new MedicoControlador();
 $pacienteCtrl = new PacienteControlador();
@@ -26,8 +32,10 @@ switch ($accion) {
     
     case 'logout':
         session_destroy();
+        session_start();
+        $_SESSION['success'] ="Sesión cerrada correctamente";
         header("Location: index.php?accion=login");
-        break;
+        exit();
 
     case 'inicio':
         include_once __DIR__ . '/vista/inicio.php';

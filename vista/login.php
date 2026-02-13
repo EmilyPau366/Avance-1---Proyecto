@@ -23,6 +23,19 @@
                     <h1 class="logo-text text-dark">HealthCore</h1>
                     <p class="text-muted small">INICIO DE SESIÓN</p>
                 </div>
+                <!--Mensajes de Sesión-->
+                <?php if (isset($_SESSION['error'])): ?>
+                    <div class="alert alert-danger text-center">
+                        <?= $_SESSION['error']; ?>
+                    </div>
+                    <?php unset($_SESSION['error']); ?>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['success'])): ?>
+                    <div class="alert alert-success text-center">
+                        <?= $_SESSION['success']; ?>
+                    </div>
+                    <?php unset($_SESSION['success']); ?>
+                <?php endif; ?>
 
                 <form action="index.php?accion=procesarLogin" method="post" class="bg-white p-4 shadow-sm">
                     <div class="mb-4">

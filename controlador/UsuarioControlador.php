@@ -8,12 +8,16 @@ class UsuarioControlador{
         
      if ($userObj) {
                 // Autenticación exitosa 
-                $_SESSION['usuario'] = $userObj->usuario;
-                header("Location: index.php?accion=menu");
+                $_SESSION['idusuario'] = $userObj->id;
+                $_SESSION['usuario'] = $userObj-> usuario;
+                $_SESSION['success'] = "Bienvenido a HealthCore";
+                header("Location: index.php?accion=inicio");
+
                 
             } else {
                 // Autenticación fallida
-                header("Location: index.php?accion=login&error=1");
+                $_SESSION['error'] = "Usuario o contraseña incorrectos";
+                header("Location: index.php?accion=login");
             }
             exit();
     }
