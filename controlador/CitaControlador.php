@@ -3,7 +3,6 @@ require_once __DIR__ . '/../dao/CitaDAO.php';
 require_once __DIR__ . '/../dao/PacienteDAO.php';
 require_once __DIR__ . '/../dao/MedicoDAO.php';
 
-
 class CitaControlador {
 
     private $dao;
